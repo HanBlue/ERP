@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="erp-auth-common" />
+        <module name="erp-auth-service" />
+        <module name="erp-common" />
+        <module name="erp-gateway" />
+        <module name="erp-item-interface" />
+        <module name="erp-item-service" />
+        <module name="erp-registry" />
+        <module name="erp-upload" />
+        <module name="erp-user-interface" />
+        <module name="erp-user-service" />
+        <module name="leyou-gateway" />
+        <module name="leyou-registry" />
+        <module name="leyou-upload" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="erp-item-interfaces" target="1.8" />
+      <module name="leyou-sms" target="1.8" />
+      <module name="leyou-sms-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

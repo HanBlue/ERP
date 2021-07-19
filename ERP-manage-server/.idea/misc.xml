@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/erp-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/erp-common/pom.xml" />
+        <option value="$PROJECT_DIR$/erp-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/erp-item/pom.xml" />
+        <option value="$PROJECT_DIR$/erp-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/erp-upload/pom.xml" />
+        <option value="$PROJECT_DIR$/erp-user/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/erp-item/erp-item-interfaces/pom.xml" />
+        <option value="$PROJECT_DIR$/leyou-sms-service/pom.xml" />
+        <option value="$PROJECT_DIR$/leyou-sms/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

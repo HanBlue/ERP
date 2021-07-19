@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-auth/erp-auth-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-auth/erp-auth-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-item" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-item/erp-item-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-item/erp-item-interfaces" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-item/erp-item-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-user/erp-user-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/erp-user/erp-user-service" charset="UTF-8" />
+  </component>
+</project>

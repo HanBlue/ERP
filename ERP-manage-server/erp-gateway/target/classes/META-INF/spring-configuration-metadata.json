@@ -1,0 +1,37 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.erp.config.FilterProperties",
+      "name": "erp.filter",
+      "type": "com.erp.config.FilterProperties"
+    },
+    {
+      "sourceType": "com.erp.config.JwtProperties",
+      "name": "erp.jwt",
+      "type": "com.erp.config.JwtProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.erp.config.FilterProperties",
+      "name": "erp.filter.allow-paths",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.erp.config.JwtProperties",
+      "name": "erp.jwt.cookie-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.erp.config.JwtProperties",
+      "name": "erp.jwt.pub-key-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.erp.config.JwtProperties",
+      "name": "erp.jwt.public-key",
+      "type": "java.security.PublicKey"
+    }
+  ]
+}
