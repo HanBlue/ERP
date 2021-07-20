@@ -38,3 +38,5 @@ erp:
     - /api/user/code
     - /api/item
     - /api/user/list
+    - /api/user/
+    - /api/

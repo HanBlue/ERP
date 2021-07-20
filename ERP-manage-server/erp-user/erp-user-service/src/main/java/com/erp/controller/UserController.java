@@ -8,18 +8,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 获取用户列表
+     * @param key
+     * @param page
+     * @param rows
+     * @param sortBy
+     * @param desc
+     * @return
+     */
     @GetMapping("list")
     public ResponseEntity<PageResult<User>> queryBrandsBypage(
             @RequestParam(value = "key",required = false)String key,
@@ -34,7 +41,39 @@ public class UserController {
         }
         return ResponseEntity.ok(result);
     }
-
+    /**
+     * 通过id查询
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<List<User>> queryByBrandId(@PathVariable("id") Long id) {
+        List<User> users = this.userService.queryByBrandId(id);
+        if (users == null || users.size() < 1) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(users);
+    }
+    /**
+     * 删除
+     * @param id
+     * @return 200
+     */
+    @DeleteMapping
+    public ResponseEntity<Void> deleteUser(@RequestParam("id") Long id) {
+        this.userService.deleteUser(id);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+    /**
+     * 更新用户信息
+     * @param user
+     * @return
+     */
+    @PutMapping("/update")
+    public ResponseEntity<Void> updateUser(@RequestBody User user){
+        this.userService.updateUser(user);
+        return ResponseEntity.noContent().build();
+    }
 
 
     /**

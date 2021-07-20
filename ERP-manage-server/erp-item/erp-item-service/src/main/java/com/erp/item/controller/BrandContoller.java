@@ -50,6 +50,18 @@ public class BrandContoller {
         this.brandService.saveBrand(brand, cids);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    /**
+     * 更新品牌
+     * @param brand
+     * @param cids
+     * @return
+     */
+    @PutMapping
+    public ResponseEntity<Void> updateBrand(Brand brand, @RequestParam("cids") List<Long> cids) {
+        this.brandService.updateBrand(brand, cids);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
     /**
      * 删除品牌
      * @param bid 商品id

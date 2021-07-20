@@ -63,6 +63,21 @@ public class BrandService {
         }
     }
     /**
+     * 更新品牌
+     * @param brand 品牌对象
+     * @param cids 商品外键
+     */
+    @Transactional
+    public void updateBrand(Brand brand, List<Long> cids) {
+        // 新增品牌信息
+        this.brandMapper.updateByPrimaryKey(brand);
+        // 新增品牌和分类中间表
+        for (Long cid : cids) {
+            this.brandMapper.deleteCategoryBrand( brand.getId());
+            this.brandMapper.insertCategoryBrand(cid, brand.getId());
+        }
+    }
+    /**
      * 删除品牌
      * @param bid 商品外键
      */

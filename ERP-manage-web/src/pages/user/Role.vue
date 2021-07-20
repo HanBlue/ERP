@@ -9,22 +9,22 @@
     <v-divider/>
     <v-data-table
       :headers="headers"
-      :items="users"
+      :items="roles"
       :pagination.sync="pagination"
       :total-items="total"
       :loading="loading"
       class="elevation-1"
     >
       <template slot="items" slot-scope="props">
-        <td class="text-xs-center">{{ props.item.id }}</td>
-        <td class="text-xs-center">{{ props.item.username}}</td>
+        <td class="text-xs-center">{{ props.item.id}}</td>
         <td class="text-xs-center">{{ props.item.name}}</td>
-        <td class="text-xs-center">{{ props.item.phone}}</td>
+        <td class="text-xs-center">{{ props.item.role_key}}</td>
+        <td class="text-xs-center">{{ props.item.role_sort}}</td>
         <td class="justify-center layout px-0">
-          <v-btn color="info" @click="editUser(props.item)">
+          <v-btn color="info" @click="editRole(props.item)">
             编辑
           </v-btn>
-          <v-btn color="warning" @click="deleteUser(props.item)">
+          <v-btn color="warning" @click="deleteRole(props.item)">
             删除
           </v-btn>
         </td>
@@ -35,14 +35,14 @@
       <v-card>
         <!--对话框的标题-->
         <v-toolbar dense dark color="primary">
-          <v-toolbar-title>{{'修改'}}用户</v-toolbar-title>
+          <v-toolbar-title>{{'修改'}}权限</v-toolbar-title>
           <v-spacer/>
           <!--关闭窗口的按钮-->
           <v-btn icon @click="closeWindow"><v-icon>close</v-icon></v-btn>
         </v-toolbar>
         <!--对话框的内容，表单-->
         <v-card-text class="px-5" style="height:400px">
-          <user-form @close="closeWindow" :oldUser="oldUser" :isEdit="isEdit"/>
+          <role-form @close="closeWindow" :oldRole="oldRole" :isEdit="isEdit"/>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -50,26 +50,26 @@
 </template>
 
 <script>
-  import UserForm from './UserForm'
+  import RoleForm from './RoleForm'
 
   export default {
-    name: "users",
+    name: "roles",
     data() {
       return {
         search: '', // 搜索过滤字段
         total: 0, // 总条数
-        users: [], // 当前页品牌数据
+        roles: [], // 当前页品牌数据
         loading: true, // 是否在加载中
         pagination: {}, // 分页信息
         headers: [
-          {text: '用户编号', align: 'center', value: 'id'},
-          {text: '用户账号', align: 'center', sortable: false, value: 'username'},
+          {text: '角色编号', align: 'center', value: 'id'},
           {text: '角色名称', align: 'center', sortable: false, value: 'name'},
-          {text: '手机号码', align: 'center', sortable: false, value: 'phone'},
+          {text: '权限字符', align: 'center', sortable: false, value: 'role_key'},
+          {text: '权限顺位', align: 'center', sortable: false, value: 'role_sort'},
           {text: '操作', align: 'center', value: 'id', sortable: false}
         ],
         show: false,// 控制对话框的显示
-        oldUser: {}, // 即将被编辑的品牌数据
+        oldRole: {}, // 即将被编辑的品牌数据
         isEdit: false, // 是否是编辑
       }
     },
@@ -94,7 +94,7 @@
     methods: {
       getDataFromServer() { // 从服务的加载数的方法。
         // 发起请求
-        this.$http.get("/user/list", {
+        this.$http.get("/user/role/page", {
           params: {
             key: this.search, // 搜索条件
             page: this.pagination.page,// 当前页
@@ -104,31 +104,30 @@
           }
         }).then(resp => { // 这里使用箭头函数
           console.log(resp);
-          this.users = resp.data.items;
+          this.roles = resp.data.items;
           this.total = resp.data.total;
           // 完成赋值后，把加载状态赋值为false
           this.loading = false;
         })
       },
-
-      editUser(oldUser) {
+      editRole(oldRole) {
         // 根据品牌信息查询商品分类
-        this.$http.get("/user/role/" + oldUser.id)
+        this.$http.get("/user/role/" + oldRole.id)
           .then(({data}) => {
             // 修改标记
             this.isEdit = true;
             // 控制弹窗可见：
             this.show = true;
             // 获取要编辑的brand
-            this.oldUser = oldUser;
+            this.oldRole = oldRole;
             // 回显商品分类
-            //this.oldUser.name = data.item.name;
+            //this.oldUser.id = data.id;
           })
       },
-      deleteUser: function (t) {
+      deleteRole: function (t) {
         var e = this;
-        this.$message.confirm("此操作将永久删除该用户, 是否继续?").then(function () {
-          e.$http.delete("/user?id=" + t.id).then(function () {
+        this.$message.confirm("此操作将永久删除该角色, 是否继续?").then(function () {
+          e.$http.delete("/user/role?id=" + t.id).then(function () {
             e.$message.success("删除成功！")
           }).then(function () {
             e.getDataFromServer()
@@ -145,9 +144,10 @@
       }
     },
     components: {
-      UserForm
+      RoleForm
     }
   }
+
 </script>
 
 <style scoped>
