@@ -1,4 +1,5 @@
 import {Message, MessageBox} from 'element-ui';
+import Vue from "vue";
 
 const m = {
   info(msg) {

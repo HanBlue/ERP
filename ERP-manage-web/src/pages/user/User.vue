@@ -94,7 +94,7 @@
     methods: {
       getDataFromServer() { // 从服务的加载数的方法。
         // 发起请求
-        this.$http.get("/user/list", {
+        this.$http.get("/user/page", {
           params: {
             key: this.search, // 搜索条件
             page: this.pagination.page,// 当前页
@@ -113,7 +113,7 @@
 
       editUser(oldUser) {
         // 根据品牌信息查询商品分类
-        this.$http.get("/user/role/" + oldUser.id)
+        this.$http.get("/user/role/" + oldUser.rid)
           .then(({data}) => {
             // 修改标记
             this.isEdit = true;

@@ -27,7 +27,7 @@ public class UserController {
      * @param desc
      * @return
      */
-    @GetMapping("list")
+    @GetMapping("page")
     public ResponseEntity<PageResult<User>> queryBrandsBypage(
             @RequestParam(value = "key",required = false)String key,
             @RequestParam(value = "page",defaultValue = "1")Integer page,
@@ -79,13 +79,12 @@ public class UserController {
     /**
      * 校验数据是否可用
      * @param data
-     * @param type
      * @return
      */
-    @GetMapping("check/{data}/{type}")
-    public ResponseEntity<Boolean> checkUserData(@PathVariable("data") String data, @PathVariable(value = "type",required = false) Integer type) {
-        if(type==null){type=1;}
-        Boolean boo = this.userService.checkData(data, type);
+    @GetMapping("check/{data}")
+    public ResponseEntity<Boolean> checkUserData(@PathVariable("data") String data) {
+
+        Boolean boo = this.userService.checkData(data);
         if (boo == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }

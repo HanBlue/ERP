@@ -18,6 +18,7 @@
 </template>
 
 <script>
+  import qs from 'qs'
   export default {
     name: "user-form",
     props: {
@@ -50,11 +51,11 @@
         // 表单校验
         //if (this.$refs.myUserForm.validate()) {
           // 定义一个请求参数对象，通过解构表达式来获取brand中的属性
-          const {id,rid,name,username,phone,...params} = this.user;
+          const {id,rid,name,phone,...params} = this.user;
           // 数据库中只要保存分类的id即可，因此我们对categories的值进行处理,只保留id，并转为字符串
         params.id = JSON.stringify(this.user.id);
         params.rid = JSON.stringify(name.id);
-
+        params.phone = this.user.phone;
           // 将字母都处理为大写
           //params.letter = letter.toUpperCase();
           // 将数据提交到后台

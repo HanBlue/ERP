@@ -9,54 +9,122 @@
                 <v-toolbar-title>ERP订单管理系统</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
-              <v-card-text>
-                <v-form>
-                  <v-text-field prepend-icon="person" v-model="username" label="用户名" type="text"/>
-                  <v-text-field
-                    prepend-icon="lock"
-                    v-model="password"
-                    label="密码"
-                    id="password"
-                    :append-icon="e1 ? 'visibility' : 'visibility_off'"
-                    :append-icon-cb="() => (e1 = !e1)"
-                    :type="e1 ? 'text' : 'password'"
-                 ></v-text-field>
-                </v-form>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary" @click="doLogin">登录</v-btn>
-              </v-card-actions>
+  <p class="login">
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane label="登录" name="first">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+          <el-form-item label="名称" prop="username"><el-input v-model="ruleForm.username"></el-input></el-form-item>
+
+          <el-form-item label="密码" prop="password"><el-input type="password" v-model="ruleForm.password" auto-complete="off"></el-input></el-form-item>
+
+          <el-form-item>
+            <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+
+            <el-button @click="resetForm('ruleForm')">重置</el-button>
+          </el-form-item>
+        </el-form>
+      </el-tab-pane>
+
+      <el-tab-pane label="注册" name="second">
+        <register></register>
+      </el-tab-pane>
+    </el-tabs>
+  </p>
             </v-card>
           </v-flex>
         </v-layout>
       </v-container>
-    </v-content>
-    <v-dialog v-model="dialog" width="300px">
-      <v-alert icon="warning" color="error" :value="true">
-      用户名和密码不能为空
-      </v-alert>
-    </v-dialog>
-  </v-app>
+      </v-content>
+    </v-app>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    username: "",
-    password: "",
-    dialog: false,
-    e1:false
-  }),
-  methods: {
-    doLogin() {
-      if (!this.username || !this.password) {
-        this.dialog = true;
-        return false;
+  import register from '../pages/register';
+  import qs from 'qs'
+  export default {
+    data() {
+      var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'));
+        } else {
+          if (this.ruleForm.checkPass !== '') {
+            this.$refs.ruleForm.validateField('checkPass');
+          }
+          callback();
+        }
+      };
+
+      return {
+        activeName: 'first',
+        ruleForm: {
+          username: '',
+          password: '',
+          //checkPass: ''
+        },
+        rules: {
+          name: [{ required: true, message: '请输入您的名称', trigger: 'blur' }, { min: 2, max: 5, message: '长度在 2 到 5 个字符', trigger: 'blur' }],
+          pass: [{ required: true, validator: validatePass, trigger: 'blur' }]
+        }
+      };
+    },
+    methods: {
+      //选项卡切换
+      handleClick(tab, event) {
+      },
+      //重置表单
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      },
+      //提交表单
+      submitForm(formName) {
+        this.$refs[formName].validate(valid => {
+            if (valid) {
+              this.$http.post("/auth/accredit", qs.stringify(this.ruleForm)
+              )
+                .then(resp => {
+                    if (resp.status === 200) {
+                      this.$router.push('/layout');
+                      this.$message({
+                        type: 'success',
+                        message: '登录成功',
+                      });
+                    }
+                  }
+                )
+                .catch( (error) =>{
+                  if (error.response.status === 401) {
+                    this.$message({
+                    type: 'error',
+                    message: '登录失败,用户名或密码错误'
+                  })
+                }
+                })
+            }
+          }
+        )
+      },
+    },
+      components: {
+        register
       }
-      console.log(this.username + " ... " + this.password);
-      this.$router.push("/");
     }
-  }
-};
 </script>
+
+<style lang="scss">
+  .login {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .el-tabsitem {
+    text-align: center;
+    width: 60px;
+  }
+
+  .container{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("../assets/0.jpg");
+  }
+
+ </style>

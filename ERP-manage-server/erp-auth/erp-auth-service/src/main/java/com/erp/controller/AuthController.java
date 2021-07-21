@@ -4,6 +4,7 @@ import com.erp.auth.entity.UserInfo;
 import com.erp.auth.utils.JwtUtils;
 import com.erp.config.JwtProperties;
 import com.erp.common.utils.CookieUtils;
+import com.erp.pojo.User;
 import com.erp.service.AuthService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 @Controller
 @EnableConfigurationProperties(JwtProperties.class)
@@ -28,8 +30,7 @@ public class AuthController {
     /**
      * 登录授权
      *
-     * @param username
-     * @param password
+     * @param
      * @return
      */
     @PostMapping("accredit")

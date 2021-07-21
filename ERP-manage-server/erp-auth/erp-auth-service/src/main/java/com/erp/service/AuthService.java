@@ -17,7 +17,7 @@ public class AuthService {
     private JwtProperties jwtProperties;
 
     public String accredit(String username, String password) {
-
+        try {
         //1.根据用户名和密码查询
         User user = this.userClient.queryUser(username,password);
 
@@ -25,8 +25,6 @@ public class AuthService {
         if (user == null){
             return null;
         }
-
-        try {
             //3.jwtUtils生成jwt类型的token
             UserInfo userInfo = new UserInfo();
             userInfo.setId(user.getId());

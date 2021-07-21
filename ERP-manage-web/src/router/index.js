@@ -20,7 +20,11 @@ export default new Router({
       component: () => import('../pages/Login'),
     },
     {
-      path:"/", // 根路径，路由到 Layout组件
+      path:"/",
+      component: () => import('../pages/Login'),
+    },
+    {
+      path:"/layout", // 根路径，路由到 Layout组件
       component: () => import('../pages/Layout'),
       redirect:"/index/dashboard",
       children:[ // 其它所有组件都是 Layout的子组件

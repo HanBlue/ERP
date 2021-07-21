@@ -1,5 +1,4 @@
 package com.erp.service;
-
 import com.erp.common.pojo.PageResult;
 import com.erp.mapper.RoleMapper;
 import com.erp.mapper.UserMapper;
@@ -24,18 +23,9 @@ public class UserService {
     @Autowired
     private RoleMapper roleMapper;
 
-    public Boolean checkData(String data, Integer type) {
+    public Boolean checkData(String data) {
         User record = new User();
-        switch (type) {
-            case 1:
-                record.setUsername(data);
-                break;
-            case 2:
-                record.setPhone(data);
-                break;
-            default:
-                return null;
-        }
+        record.setUsername(data);
         return this.userMapper.selectCount(record) == 0;
     }
 
@@ -66,13 +56,14 @@ public class UserService {
         if (user == null){
             return null;
         }
-//        //获取盐，对用户输入的密码加盐加密
-//        password = CodecUtils.md5Hex(password,user.getSalt());
-//        //和数据库中的密码比较
-//        if (StringUtils.equals(password,user.getPassword())){
-//            return user;
-//        }
-//        return null;
+        //获取盐，对用户输入的密码加盐加密
+       // password = CodeUtils.md5Hex(password,user.getSalt());
+        //和数据库中的密码比较
+        // 校验密码
+        if (!user.getPassword().equals(password)) {
+            return null;
+        }
+        // 用户名密码都正确
         return user;
     }
 
