@@ -83,11 +83,11 @@
               )
                 .then(resp => {
                     if (resp.status === 200) {
-                      this.$router.push('/layout');
                       this.$message({
                         type: 'success',
                         message: '登录成功',
                       });
+                      this.$router.push('/layout');
                     }
                   }
                 )

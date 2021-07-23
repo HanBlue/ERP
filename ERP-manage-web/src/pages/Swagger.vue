@@ -1,0 +1,14 @@
+<template>
+  <iframe src="http://localhost:8081/swagger-ui/index.html#/" width="100%" height="630" frameborder="0" scrolling="auto">
+  </iframe>
+</template>
+
+<script>
+    export default {
+        name: "Swagger"
+    }
+</script>
+
+<style scoped>
+
+</style>

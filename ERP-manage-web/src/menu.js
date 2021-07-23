@@ -2,8 +2,8 @@ var menus = [
   {
     action: "home",
     title: "首页",
-    path:"/index",
-    items: [{ title: "统计", path: "/dashboard" }]
+    path:"/home",
+    items: [{ title: "欢迎页", path: "/blog" }]
   },
   {
     action: "apps",
@@ -18,11 +18,11 @@ var menus = [
   },
   {
     action: "attach_money",
-    title: "订单管理",
+    title: "交易管理",
     path:"/trade",
     items: [
       { title: "交易统计", path: "/dashboard" },
-      { title: "交易管理", path: "/order" },
+      { title: "订单管理", path: "/order" },
       { title: "促销管理", path: "/promotion" }
     ]
   },

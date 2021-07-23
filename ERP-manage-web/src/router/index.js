@@ -33,12 +33,12 @@ export default new Router({
         route("/item/brand",'/item/Brand',"Brand"),
         route("/item/list",'/item/Goods',"Goods"),
         route("/item/specification",'/item/specification/Specification',"Specification"),
-        route("/user/statistics",'/item/Statistics',"Statistics"),
         route("/trade/promotion",'/trade/Promotion',"Promotion"),
         route("/trade/order",'/trade/Order',"Order"),
         route("/authority/user",'/user/User',"User"),
         route("/authority/role",'/user/Role',"Role"),
-        route("/home/blog",'/Blog',"Blog")
+        route("/home/blog",'/Blog',"Blog"),
+        route("/system/swagger",'/Swagger',"Swagger")
       ]
     }
   ]

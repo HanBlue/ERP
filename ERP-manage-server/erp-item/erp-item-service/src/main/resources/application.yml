@@ -17,3 +17,8 @@ eureka:
     lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
 mybatis:
   type-aliases-package: com.erp.item.pojo
+
+# Swagger配置
+swagger:
+  # 是否开启swagger
+  enabled: true
