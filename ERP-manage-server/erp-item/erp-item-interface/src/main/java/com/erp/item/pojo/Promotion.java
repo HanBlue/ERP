@@ -1,18 +1,15 @@
 package com.erp.item.pojo;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "tb_brand")
-public class Brand {
+@Table(name = "tb_promotion")
+public class Promotion {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;//商品id
-    private String name;// 品牌名称
-    private String image;// 品牌图片
-    private Character letter;//关键字
+    private Long id;//活动id
+    private String name;// 名称
+    private String image;// 图片
+    private String text;//活动描述
 
     public Long getId() {
         return id;
@@ -38,11 +35,11 @@ public class Brand {
         this.image = image;
     }
 
-    public Character getLetter() {
-        return letter;
+    public String getText() {
+        return text;
     }
 
-    public void setLetter(Character letter) {
-        this.letter = letter;
+    public void setText(String text) {
+        this.text = text;
     }
 }

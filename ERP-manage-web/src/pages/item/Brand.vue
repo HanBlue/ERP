@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      <v-btn color="primary" @click="addBrand">新增用户</v-btn>
+      <v-btn color="primary" @click="addBrand">新增品牌</v-btn>
       <!--搜索框，与search属性关联-->
       <v-spacer/>
       <v-flex xs3>
@@ -141,7 +141,7 @@
       },
     deleteBrand:function(t){
         var e=this;
-        this.$message.confirm("此操作将永久删除该品牌, 是否继续?").then(function(){
+        this.$confirm("此操作将永久删除该品牌, 是否继续?").then(function(){
           e.$http.delete("/item/brand?id="+t.id).then(function(){
             e.$message.success("删除成功！")}).then(function (){
             e.getDataFromServer()

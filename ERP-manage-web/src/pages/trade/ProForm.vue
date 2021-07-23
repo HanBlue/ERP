@@ -1,8 +1,20 @@
 <template>
-  <v-form v-model="valid" ref="myUserForm">
-    <v-text-field v-model="role.role_name" label="请输入角色名称" required :rules="nameRules"/>
-    <v-text-field v-model="role.role_key" label="请选择权限字符" />
-    <v-text-field v-model="role.role_sort" label="请输入权限顺位" />
+  <v-form v-model="valid" ref="myProForm">
+    <v-text-field v-model="promotion.name" label="请输入活动名称" required :rules="nameRules"/>
+    <v-text-field v-model="promotion.text" label="请输入促销描述" />
+
+    <v-layout row>
+      <v-flex xs3>
+        <span style="font-size: 16px; color: #444">活动图片</span>
+      </v-flex>
+    </v-layout>
+    <v-layout row>
+      <v-flex>
+        <v-upload
+          v-model="promotion.image" url="/upload/image" :multiple="false" :pic-width="400" :pic-height="100"
+        />
+      </v-flex>
+    </v-layout>
     <v-layout class="my-4" row>
       <v-spacer/>
       <v-btn @click="submit" color="primary">提交</v-btn>
@@ -13,9 +25,9 @@
 
 <script>
   export default {
-    name: "role-form",
+    name: "pro-form",
     props: {
-      oldRole: {
+      oldPromotion: {
         type: Object
       },
       isEdit: {
@@ -26,29 +38,30 @@
     data() {
       return {
         valid: false, // 表单校验结果标记
-        role: {
-          role_name: '', // 用户账号
-          role_key: '', // 用户角色
-          role_sort: '',// 手机号码
+        promotion: {
+          id:'',
+          name: '', // 名称
+          text: '', // 描述
+          image: '',// 品牌logo
         },
         nameRules: [
-          v => !!v || "角色名字不能为空",
-          v => v.length > 1 || "至少2位"
-        ],
+          v => !!v || "名称不能为空",
+          v => v.length > 1 || "名称至少2位"
+        ]
       }
     },
     methods: {
       submit() {
         // 表单校验
-        if (this.$refs.myRoleForm.validate()) {
+        if (this.$refs.myProForm.validate()) {
           this.$http({
             headers: {
               dataType: 'json',
               contentType: 'application/json',
             },
-            method: 'put' ,
-            url: '/role',
-            data: this.$qs.stringify(this.role)
+            method: this.isEdit ? 'put' : 'post',
+            url: '/item/promotion',
+            data: this.$qs.stringify(this.promotion)
           }).then(() => {
             // 关闭窗口
             this.$emit("close");
@@ -61,23 +74,21 @@
       },
       clear() {
         // 重置表单
-        this.$refs.myRoleForm.reset();
-        // 需要手动清空商品分类
+        this.$refs.myProForm.reset();
       }
     },
     watch: {
-      oldRole: {// 监控oldUser的变化
+      oldPromotion: {// 监控oldBrand的变化
         handler(val) {
           if (val) {
             // 注意不要直接复制，否则这边的修改会影响到父组件的数据，copy属性即可
-            this.role = Object.deepCopy(val)
+            this.promotion= Object.deepCopy(val)
           } else {
             // 为空，初始化brand
-            this.role = {
-              role_id:'',
-              role_name: '',
-              role_key: '',
-              role_sort: '',
+            this.promotion = {
+              name: '',
+              text: '',
+              image: '',
             }
           }
         },

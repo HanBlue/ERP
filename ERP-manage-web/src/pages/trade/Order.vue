@@ -9,40 +9,44 @@
     <v-divider/>
     <v-data-table
       :headers="headers"
-      :items="roles"
+      :items="orders"
       :pagination.sync="pagination"
       :total-items="total"
       :loading="loading"
-      class="elevation-1"
+      class="elevation-5"
+      loader-height=8
     >
       <template slot="items" slot-scope="props">
-        <td class="text-xs-center">{{ props.item.id}}</td>
-        <td class="text-xs-center">{{ props.item.name}}</td>
-        <td class="text-xs-center">{{ props.item.role_key}}</td>
-        <td class="text-xs-center">{{ props.item.role_sort}}</td>
-        <td class="justify-center layout ">
-          <v-btn color="info"   @click="editRole(props.item)">
-            修改
+        <td class="text-xs-center">{{ props.item.id }}</td>
+        <td class="text-xs-center" >{{ props.item.create_time}}</td>
+        <td class="text-xs-center">{{ props.item.buyer_name}}</td>
+        <td class="text-xs-center">{{ props.item.title}}</td>
+        <td class="text-xs-center">{{ props.item.own_spec}}</td>
+        <td class="text-xs-center">{{ props.item.num}}</td>
+        <td class="text-xs-center">{{ props.item.price}}</td>
+
+        <td class="text-xs-center">{{ props.item.buyer_message}}</td>
+        <td class="justify-center layout px-0">
+          <v-btn color="info" @click="intoOrder(props.item)">
+            物流详情
           </v-btn>
-          <v-btn color="warning" @click="deleteRole(props.item)">
-            删除
-          </v-btn>
+
         </td>
       </template>
     </v-data-table>
     <!--弹出的对话框-->
-    <v-dialog max-width="500" v-model="show" persistent scrollable>
+    <v-dialog max-width="750" v-model="show" persistent scrollable>
       <v-card>
         <!--对话框的标题-->
         <v-toolbar dense dark color="primary">
-          <v-toolbar-title>{{'修改'}}权限</v-toolbar-title>
+          <v-toolbar-title>{{'查看'}}订单详情</v-toolbar-title>
           <v-spacer/>
           <!--关闭窗口的按钮-->
           <v-btn icon @click="closeWindow"><v-icon>close</v-icon></v-btn>
         </v-toolbar>
         <!--对话框的内容，表单-->
         <v-card-text class="px-5" style="height:400px">
-          <role-form @close="closeWindow" :oldRole="oldRole" :isEdit="isEdit"/>
+          <order-detail :title="title" @close="closeWindow" :oldOrder="oldOrder"/>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -50,27 +54,31 @@
 </template>
 
 <script>
-  import RoleForm from './RoleForm'
-
+  import OrderDetail from './OrderDetail'
   export default {
-    name: "roles",
+    name: "order",
+
     data() {
       return {
         search: '', // 搜索过滤字段
         total: 0, // 总条数
-        roles: [], // 当前页品牌数据
+        users: [], // 当前页品牌数据
         loading: true, // 是否在加载中
         pagination: {}, // 分页信息
         headers: [
-          {text: '角色编号', align: 'center', value: 'id'},
-          {text: '角色名称', align: 'center', sortable: false, value: 'name'},
-          {text: '权限字符', align: 'center', sortable: false, value: 'role_key'},
-          {text: '权限顺位', align: 'center', sortable: false, value: 'role_sort'},
+          {text: '订单编号', align: 'center', value: 'id'},
+          {text: '创建时间', align: 'center', sortable: false, value: 'create_time'},
+          {text: '买家昵称', align: 'center', sortable: false, value: 'buyer_name'},
+          {text: '商品标题', align: 'center', sortable: false, value: 'title'},
+          {text: '商品属性', align: 'center', sortable: false, value: 'own_spec'},
+          {text: '购买数量', align: 'center', sortable: false, value: 'num'},
+          {text: '支付金额', align: 'center', sortable: false, value: 'price'},
+
+          {text: '买家留言', align: 'center', sortable: false, value: 'buyer_message'},
           {text: '操作', align: 'center', value: 'id', sortable: false}
         ],
         show: false,// 控制对话框的显示
-        oldRole: {}, // 即将被编辑的品牌数据
-        isEdit: false, // 是否是编辑
+        oldOrder: {}, // 即将被编辑的品牌数据
       }
     },
     mounted() { // 渲染后执行
@@ -94,7 +102,7 @@
     methods: {
       getDataFromServer() { // 从服务的加载数的方法。
         // 发起请求
-        this.$http.get("/user/role/page", {
+        this.$http.get("/item/order/page", {
           params: {
             key: this.search, // 搜索条件
             page: this.pagination.page,// 当前页
@@ -103,38 +111,16 @@
             desc: this.pagination.descending// 是否降序
           }
         }).then(resp => { // 这里使用箭头函数
-          console.log(resp);
-          this.roles = resp.data.items;
+          this.orders = resp.data.items;
           this.total = resp.data.total;
           // 完成赋值后，把加载状态赋值为false
           this.loading = false;
         })
       },
-      editRole(oldRole) {
-        // 根据品牌信息查询商品分类
-        this.$http.get("/user/role/" + oldRole.id)
-          .then(({data}) => {
-            // 修改标记
-            this.isEdit = true;
+      intoOrder(oldOrder) {
             // 控制弹窗可见：
             this.show = true;
-            // 获取要编辑的brand
-            this.oldRole = oldRole;
-            // 回显商品分类
-            //this.oldUser.id = data.id;
-          })
-      },
-      deleteRole: function (t) {
-        var e = this;
-        this.$confirm("此操作将永久删除该角色, 是否继续?").then(function () {
-          e.$http.delete("/user/role?id=" + t.id).then(function () {
-            e.$message.success("删除成功！")
-          }).then(function () {
-            e.getDataFromServer()
-          })
-        }).catch(function () {
-          e.$message.info("删除已取消！")
-        })
+            this.oldOrder = oldOrder;
       },
       closeWindow() {
         // 重新加载数据
@@ -144,12 +130,12 @@
       }
     },
     components: {
-      RoleForm
+      OrderDetail
     }
   }
-
 </script>
 
 <style scoped>
 
 </style>
+
