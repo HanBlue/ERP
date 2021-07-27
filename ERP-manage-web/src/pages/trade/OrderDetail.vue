@@ -1,4 +1,4 @@
-<<template>
+<template>
   <el-table
     :data="desserts"
     border
@@ -52,7 +52,7 @@
             calories: this.oldOrder.receiver_address,
           }
           ],
-        order: {
+        oldOrder: {
           id: '',
           shipping_name: '',
           shipping_code: '',
@@ -68,17 +68,7 @@
         handler(val) {
           if (val) {
             // 注意不要直接复制，否则这边的修改会影响到父组件的数据，copy属性即可
-            this.order = Object.deepCopy(val)
-          } else {
-            // 为空，初始化brand
-            this.order = {
-              id: '',
-              shipping_name: '',
-              shipping_code: '',
-              receiver: '',
-              receiver_mobile:'',
-              receiver_address:'',
-            }
+            this.OldOrder = Object.deepCopy(val)
           }
         },
         deep: true

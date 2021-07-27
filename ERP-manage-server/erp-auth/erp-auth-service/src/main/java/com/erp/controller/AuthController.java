@@ -34,7 +34,7 @@ public class AuthController {
      * @return
      */
     @PostMapping("accredit")
-    public ResponseEntity<Void> accredit(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) {
+    public ResponseEntity<String> accredit(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) {
 
         String token = this.authService.accredit(username, password);
         if (StringUtils.isBlank(token)) {
@@ -43,7 +43,7 @@ public class AuthController {
 
         CookieUtils.setCookie(request, response, this.prop.getCookieName(), token, this.prop.getExpire() * 60);
 
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(token);
     }
 
     /**
@@ -72,4 +72,6 @@ public class AuthController {
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
+
+
 }

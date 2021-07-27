@@ -3,6 +3,7 @@ package com.erp.controller;
 import com.erp.common.pojo.PageResult;
 import com.erp.pojo.User;
 import com.erp.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,6 +54,15 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.ok(users);
+    }
+    @GetMapping("check/{id}/{pid}")
+    public ResponseEntity<Void> check (@PathVariable("id") Long id, @PathVariable("pid") Long pid){
+        List<User> users = this.userService.queryByBrandId(id);
+        Boolean bo=this.userService.check(users.get(0).getRid(),pid);
+        if(bo ){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        return ResponseEntity.ok(null);
     }
     /**
      * 删除

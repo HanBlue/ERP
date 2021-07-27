@@ -93,6 +93,17 @@
     },
     methods: {
       getDataFromServer() { // 从服务的加载数的方法。
+        this.$http.get("/auth/verify/" )
+          .catch(() => {
+            // 去登录
+            this.$router.push("/login");
+          })
+          .then(resp => {
+            //查询权限
+            this.user = resp.data;
+            this.$http.get("/user/check/"+this.user.id+"/6")
+              .then(resp => {
+                  if (resp.status === 200){
         // 发起请求
         this.$http.get("/user/role/page", {
           params: {
@@ -109,6 +120,16 @@
           // 完成赋值后，把加载状态赋值为false
           this.loading = false;
         })
+                  }})
+              .catch((error) =>{
+                if (error.response.status === 401) {
+                  this.$message({
+                    type: 'error',
+                    message: '抱歉，您无权访问'
+                  })
+                }
+              })
+          })
       },
       editRole(oldRole) {
         // 根据品牌信息查询商品分类

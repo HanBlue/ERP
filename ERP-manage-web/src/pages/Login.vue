@@ -3,19 +3,18 @@
     <v-content>
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
-          <v-flex xs12 sm8 md4>
-            <v-card class="elevation-12">
+          <v-flex xs12 sm8 md4 >
+            <v-card class="elevation-12" >
               <v-toolbar dark color="primary">
-                <v-toolbar-title>ERP订单管理系统</v-toolbar-title>
+                <v-toolbar-title >ERP订单管理系统</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
   <p class="login">
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="登录" name="first">
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-item label="名称" prop="username"><el-input v-model="ruleForm.username"></el-input></el-form-item>
-
-          <el-form-item label="密码" prop="password"><el-input type="password" v-model="ruleForm.password" auto-complete="off"></el-input></el-form-item>
+          <el-form-item label="名称" prop="username" ><el-input v-model="ruleForm.username" placeholder="root" ></el-input></el-form-item>
+          <el-form-item label="密码" prop="password"><el-input type="password" v-model="ruleForm.password" auto-complete="off"placeholder="55555"></el-input></el-form-item>
 
           <el-form-item>
             <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
@@ -83,6 +82,7 @@
               )
                 .then(resp => {
                     if (resp.status === 200) {
+
                       this.$message({
                         type: 'success',
                         message: '登录成功',
@@ -122,8 +122,8 @@
   }
 
   .container{
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-repeat: repeat-y;
+    background-size: 105%;
     background-image: url("../assets/0.jpg");
   }
 

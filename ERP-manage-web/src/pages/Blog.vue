@@ -35,6 +35,7 @@
             </el-button><span class="text">{{ text14 }}</span></tr>
             <br>
             <tr><span class="header">{{ text15 }}</span></tr>
+            <tr><span class="text">{{ text16 }}<a :href="'http://Hanblue.github.io'">http://Hanblue.github.io</a></span></tr>
           </div>
 
         </div>
@@ -48,8 +49,8 @@
     name:"Blog",
     data() {
       return {
-        text0:"本系统主要是由电商进行使用，出于大量订单数据处理与数据保密的需要。",
-        text1:"    您在使用本系统前必须登录，‘root’拥有超级管理员权限，‘han1’和‘HAN_Blue’拥有运维和游客权限。",
+        text0:"本系统主要是由平台商家进行使用，出于大量订单数据处理与数据保密的需要。",
+        text1:"    您在使用本系统前必须登录，‘root’拥有超级管理员权限，‘han1’和‘HAN’拥有运维和游客权限。",
         text2:"    如果您没有账户，那注册后默认只有游客权限，如需要请联系超级管理员赋权。",
         text3:"商品管理功能需要超级管理员或者运维权限。",
         text4:"    中，您可以新增、删除和修改品牌的属性；" ,
@@ -63,7 +64,8 @@
         text12:"权限管理功能需要超级管理员权限。" ,
         text13:"   中，您可以对权限或角色进行修改；" ,
         text14:"   中，您可以对所有账户的信息进行修改",
-        text15:"在系统管理中可以查看所有后台接口，供开发人员使用。"
+        text15:"在系统管理中可以查看所有后台接口，供开发人员使用。",
+        text16:"更多技术详情，欢迎访问我的博客: "
       }
     },
     methods: {
@@ -128,5 +130,11 @@
     background-image: url("../assets/66.jpg");
     background-size: 130%;
   }
+  .el-card{
+    background-repeat: no-repeat;
+    background-image: url("../assets/8.jpg");
+    background-size: 170%;
+  }
+
 </style>
 

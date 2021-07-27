@@ -13,6 +13,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/material.css'
 import Element from 'element-ui'
 
+
 Vue.use(Vuetify, { theme: config.theme})
 Vue.use(MyComponent)
 Vue.use(Element)

@@ -21,7 +21,7 @@
         <td class="text-xs-center">{{ props.item.id }}</td>
         <td class="text-xs-center">{{ props.item.name }}</td>
         <td class="text-xs-center">
-          <img v-if="props.item.image" :src="props.item.image" width="130" height="40">
+          <img v-if="props.item.image" :src="props.item.image" width="220" height="70">
           <span v-else>无</span>
         </td>
         <td class="text-xs-center">{{ props.item.letter }}</td>
@@ -101,22 +101,44 @@
     methods: {
       getDataFromServer() { // 从服务的加载数的方法。
         // 发起请求
-        this.$http.get("/item/brand/page", {
-          params: {
-            key: this.search, // 搜索条件
-            page: this.pagination.page,// 当前页
-            rows: this.pagination.rowsPerPage,// 每页大小
-            sortBy: this.pagination.sortBy,// 排序字段
-            desc: this.pagination.descending// 是否降序
-          }
-        }).then(resp => { // 这里使用箭头函数
-          console.log(resp);
-          this.brands = resp.data.items;
-          this.totalBrands = resp.data.total;
-          // 完成赋值后，把加载状态赋值为false
-          this.loading = false;
-        })
-      },
+        this.$http.get("/auth/verify/" )
+          .catch(() => {
+            // 去登录
+            this.$router.push("/login");
+          })
+          .then(resp => {
+            //查询权限
+            this.user = resp.data;
+            this.$http.get("/user/check/"+this.user.id+"/4")
+            .then(resp => {
+              if (resp.status === 200){
+                this.$http.get("/item/brand/page", {
+                  params: {
+                    key: this.search, // 搜索条件
+                    page: this.pagination.page,// 当前页
+                    rows: this.pagination.rowsPerPage,// 每页大小
+                    sortBy: this.pagination.sortBy,// 排序字段
+                    desc: this.pagination.descending// 是否降序
+                  }})
+                  .then(resp => { // 这里使用箭头函数
+                  console.log(resp);
+                  this.brands = resp.data.items;
+                  this.totalBrands = resp.data.total;
+                  // 完成赋值后，把加载状态赋值为false
+                  this.loading = false;
+                })
+              }
+            })
+              .catch((error) =>{
+                if (error.response.status === 401) {
+                  this.$message({
+                    type: 'error',
+                    message: '抱歉，您无权访问'
+                  })
+                }
+              })
+          })
+          },
       addBrand() {
         // 修改标记
         this.isEdit = false;

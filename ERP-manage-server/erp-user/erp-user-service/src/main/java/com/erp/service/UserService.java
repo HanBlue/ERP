@@ -1,7 +1,9 @@
 package com.erp.service;
 import com.erp.common.pojo.PageResult;
+import com.erp.mapper.PowerMapper;
 import com.erp.mapper.RoleMapper;
 import com.erp.mapper.UserMapper;
+import com.erp.pojo.Power;
 import com.erp.pojo.Role;
 import com.erp.pojo.User;
 import com.erp.utils.CodeUtils;
@@ -22,11 +24,26 @@ public class UserService {
     private UserMapper userMapper;
     @Autowired
     private RoleMapper roleMapper;
+    @Autowired
+    private PowerMapper powerMapper;
 
     public Boolean checkData(String data) {
         User record = new User();
         record.setUsername(data);
         return this.userMapper.selectCount(record) == 0;
+    }
+
+    /**
+     * 查询是否有权限
+     * @param rid
+     * @param pid
+     * @return
+     */
+    public Boolean check(Long rid,Long pid) {
+        Power record = new Power();
+        record.setRid(rid);
+        record.setPid(pid);
+        return this.powerMapper.selectCount(record) == 0;
     }
 
     /**

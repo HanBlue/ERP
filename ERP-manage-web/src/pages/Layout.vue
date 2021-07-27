@@ -17,7 +17,10 @@
               <img src="../assets/3.jpg">
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title>HAN蓝海</v-list-tile-title>
+              <span class="text">欢迎您，尊敬的
+              <span class="text1">{{user.username}}<v-spacer/>
+                <el-button  type="text" @click="ReLogin" >退出登录</el-button>
+              </span></span>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
@@ -54,10 +57,8 @@
     <v-toolbar
       app
       dark
-      :color="dark ? 'secondary' : 'primary'"
+      :color="dark ? 'deep-purple accent-3' : 'light-blue darken-1'"
     >
-      <!-- 隐藏左侧菜单的按钮-->
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"/>
       <!-- 收起左侧菜单的按钮-->
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"/>
@@ -76,14 +77,6 @@
       <v-toolbar-title v-text="title"/>
       <v-spacer/>
 
-      <!-- 调色板 -->
-      <v-btn icon @click.stop="dark = !dark">
-        <v-icon>invert_colors</v-icon>
-      </v-btn>
-      <!-- 顶部导航用户菜单 -->
-      <v-btn icon @click.stop="dark = !dark">
-        <v-icon>account_box</v-icon>
-      </v-btn>
     </v-toolbar>
     <!--中间内容主体-->
     <v-content>
@@ -106,6 +99,7 @@
   export default {
     data() {
       return {
+        user: {},
         dark: false,// 是否暗黑主题
         drawer: true,// 左侧导航是否隐藏
         miniVariant: false,// 左侧导航是否收起
@@ -129,19 +123,47 @@
     name: 'App',
     watch: {},
     created() {
+      //const token = this.getCookie("LY_TOKEN");
+        // 有token，曾经登录过，查询用户信息
+        this.$http.get("/auth/verify/" )
+          .then(resp => {
+            this.user = resp.data;
+          })
+          .catch(() => {
+            // 去登录
+             this.$router.push("/login");
+          });
+
+
       menus.forEach(m => {
         const p1 = m.path.slice(1);
         this.menuMap[p1] = {name: m.title};
         m.items.forEach(i => {
           this.menuMap[p1][i.path.slice(1)] = i.title;
         })
-      })
+      });
+    },
+    methods: {
+      getCookie(name){
+        var match = document.cookie.match(RegExp('(?:^|;\\s*)' + name + '=([^;]*)'));
+      return match ? match[1] : null; },
+      ReLogin(){
+        this.$router.push("/login");
+      }
     }
   }
 </script>
 
-<style scoped>
+<style scoped >
   .box {
     width: 90%;
+  }
+  .text {
+    font-size: 15px;
+    color: #424242;
+  }
+  .text1{
+    font-size: 20px;
+    color: #3a8ee6;
   }
 </style>

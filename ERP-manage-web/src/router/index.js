@@ -21,7 +21,7 @@ export default new Router({
     },
     {
       path:"/",
-      component: () => import('../pages/Login'),
+      redirect:"/login",
     },
     {
       path:"/layout", // 根路径，路由到 Layout组件

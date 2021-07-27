@@ -49,10 +49,31 @@
     },
     methods: {
       getData() {
+        this.$http.get("/auth/verify/" )
+          .catch(() => {
+            // 去登录
+            this.$router.push("/login");
+          })
+          .then(resp => {
+            //查询权限
+            this.user = resp.data;
+            this.$http.get("/user/check/"+this.user.id+"/3")
+              .then(resp => {
+                  if (resp.status === 200){
         this.$http.get(this.url, {params: {pid: 0}}).then(resp => {
           this.db = resp.data;
           this.db.forEach(n => n['path'] = [n.name])
         })
+                  }})
+              .catch((error) =>{
+                if (error.response.status === 401) {
+                  this.$message({
+                    type: 'error',
+                    message: '抱歉，您无权访问'
+                  })
+                }
+              })
+          })
       },
       handleAdd(node) {
         this.$emit("handleAdd", this.copyNodeInfo(node));
