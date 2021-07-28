@@ -69,7 +69,16 @@
           if (val) {
             // 注意不要直接复制，否则这边的修改会影响到父组件的数据，copy属性即可
             this.OldOrder = Object.deepCopy(val)
-          }
+          }else {
+            // 为空，初始化brand
+            this.OldOrder = {
+              id: '',
+              shipping_name: '',
+              shipping_code: '',
+              receiver: '',
+              receiver_mobile:'',
+              receiver_address:'',
+            }}
         },
         deep: true
       },

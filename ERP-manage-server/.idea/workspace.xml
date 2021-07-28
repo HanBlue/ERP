@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eacb798a-160c-45c7-b7a8-5214c2ee4262" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/erp-user/erp-user-interface/src/main/java/com/erp/pojo/Power.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/mapper/PowerMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-auth/erp-auth-common/src/main/java/com/erp/auth/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/erp-auth/erp-auth-common/src/main/java/com/erp/auth/entity/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-auth/erp-auth-common/target/classes/com/erp/auth/entity/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/erp-auth/erp-auth-common/target/classes/com/erp/auth/entity/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-auth/erp-auth-service/src/main/java/com/erp/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erp-auth/erp-auth-service/src/main/java/com/erp/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-auth/erp-auth-service/target/classes/com/erp/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/erp-auth/erp-auth-service/target/classes/com/erp/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-user/erp-user-service/target/classes/com/erp/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/erp-user/erp-user-service/target/classes/com/erp/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/erp-user/erp-user-service/target/classes/com/erp/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/erp-user/erp-user-service/target/classes/com/erp/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/assets/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/components/tree/Tree.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/components/tree/Tree.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/http.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Blog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Blog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Layout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/item/Brand.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/item/Brand.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/item/Goods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/item/Goods.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/trade/Order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/trade/Order.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/trade/OrderDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/trade/OrderDetail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/trade/Promotion.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/trade/Promotion.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/user/Role.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/user/Role.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/pages/user/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/pages/user/User.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ERP-manage-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ERP-manage-web/src/router/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -217,13 +193,14 @@
     <session id="-1735838938">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -265,7 +242,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1300">
+            <state relative-caret-position="275">
               <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
@@ -274,7 +251,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/erp-auth/erp-auth-service/src/main/java/com/erp/controller/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="575">
               <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
             </state>
           </provider>
@@ -283,7 +260,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
+            <state relative-caret-position="700">
               <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
@@ -301,7 +278,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/RoleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1487">
+            <state relative-caret-position="1875">
               <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
             </state>
           </provider>
@@ -405,7 +382,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1455" />
@@ -420,7 +397,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -551,7 +528,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,7 +541,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1627292105082" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="D:/wk/managesys-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -727,9 +704,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ErpItemApplication" />
         <item itemvalue="Spring Boot.ErpGatewayApplication" />
         <item itemvalue="Spring Boot.ErpRegistryApplication" />
-        <item itemvalue="Spring Boot.ErpItemApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -783,11 +760,12 @@
       <workItem from="1627259685050" duration="718000" />
       <workItem from="1627265025022" duration="11144000" />
       <workItem from="1627346160858" duration="8786000" />
+      <workItem from="1627434534541" duration="685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214373000" />
+    <option name="totallyTimeSpent" value="215058000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,9 +778,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22453083" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16957104" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -824,7 +801,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32885906" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32885906" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.28590605" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="14" visible="true" weight="0.42550334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1125,16 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#173#174#0" expanded="true" />
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,13 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-user/erp-user-interface/src/main/java/com/erp/pojo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erp-gateway/src/main/java/com/erp/config/ErpCorsFilterConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
@@ -1173,13 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1487">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erp-gateway/src/main/java/com/erp/ErpGatewayApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -1187,31 +1140,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-gateway/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+        <state relative-caret-position="275">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/erp-auth/erp-auth-service/src/main/java/com/erp/controller/AuthController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
+        <state relative-caret-position="575">
           <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="700">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/erp-user/erp-user-interface/src/main/java/com/erp/pojo/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="125">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-user/erp-user-service/src/main/java/com/erp/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
         </state>
       </provider>
     </entry>
