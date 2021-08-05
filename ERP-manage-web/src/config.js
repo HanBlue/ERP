@@ -1,4 +1,4 @@
-const baseUrl = 'http://api.leyou.com'
+const baseUrl = 'http://api.hanblue.top:10010'
 const config = {
   locale: 'zh-CN', // en-US, zh-CN
   url: baseUrl,

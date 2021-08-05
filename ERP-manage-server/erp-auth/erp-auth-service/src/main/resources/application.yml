@@ -1,12 +1,13 @@
 server:
   port: 8087
+  max-http-header-size: 20480
 spring:
   application:
     name: auth-service
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+      defaultZone: http://121.4.89.43:10086/eureka
     registry-fetch-interval-seconds: 10
   instance:
     lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
@@ -14,8 +15,8 @@ eureka:
 leyou:
   jwt:
     secret: leyou@Login(Auth}*^31)&heiMa% # 登录校验的密钥
-    pubKeyPath: C:\Users\\黄淮\\Desktop\\Leyou\\leyou-auth\\rsa\\rsa.pub # 公钥地址
-    priKeyPath: C:\Users\\黄淮\\Desktop\\Leyou\\leyou-auth\\rsarsa\\rsa.pri # 私钥地址
+    pubKeyPath: /www/wwwroot/rsa.pub # 公钥地址
+    priKeyPath: /www/wwwroot/rsa.pri # 私钥地址
     expire: 30 # 过期时间,单位分钟
     cookieName: LY_TOKEN
     cookieMaxAge: 30

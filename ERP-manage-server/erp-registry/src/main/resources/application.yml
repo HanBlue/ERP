@@ -9,3 +9,7 @@ eureka:
       defaultZone: http://127.0.0.1:${server.port}/eureka
     register-with-eureka: false
     fetch-registry: false
+  instance:
+    prefer-ip-address: true
+    ip-address: 121.4.89.43
+    instance-id: ${spring.application.name}:${server.port}

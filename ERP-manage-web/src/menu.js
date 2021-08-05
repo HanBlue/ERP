@@ -41,6 +41,7 @@ var menus = [
     path:"/system",
     items: [
       { title: "系统接口", path: "/swagger" },
+      { title: "微服务管理", path: "/eureka" },
     ]
   }
 ]

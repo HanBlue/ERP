@@ -6,11 +6,11 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+      defaultZone: http://121.4.89.43:10086/eureka
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
-    ip-address: 127.0.0.1
+    ip-address: 121.4.89.43
     instance-id: ${spring.application.name}:${server.port}
 zuul:
   prefix: /api # 添加路由前缀
@@ -27,7 +27,7 @@ zuul:
   sensitive-headers:
 erp:
   jwt:
-    pubKeyPath: C:\Users\\黄淮\\Desktop\\Leyou\\leyou-auth\\rsa\\rsa.pub # 公钥地址
+    pubKeyPath: /www/wwwroot/rsa.pub # 公钥地址
     cookieName: LY_TOKEN # cookie的名称
   filter:
     allowPaths:

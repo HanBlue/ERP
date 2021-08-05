@@ -38,7 +38,8 @@ export default new Router({
         route("/authority/user",'/user/User',"User"),
         route("/authority/role",'/user/Role',"Role"),
         route("/home/blog",'/Blog',"Blog"),
-        route("/system/swagger",'/Swagger',"Swagger")
+        route("/system/swagger",'/Swagger',"Swagger"),
+        route("/system/eureka",'/Eureka',"Eureka")
       ]
     }
   ]
