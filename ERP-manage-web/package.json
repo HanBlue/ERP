@@ -11,15 +11,18 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "easings": "^1.1.1",
     "echarts": "^4.1.0",
     "element-ui": "^2.15.3",
     "iview": "^2.11.0",
     "less": "^4.1.1",
     "less-loader": "^10.0.1",
+    "lib-flexible": "^0.3.2",
     "qs": "^6.10.1",
     "vue": "^2.5.2",
     "vue-quill-editor": "^3.0.5",
     "vue-router": "^3.0.1",
+    "vue-show": "^1.0.8",
     "vuetify": "^1.5.24"
   },
   "devDependencies": {
@@ -47,6 +50,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "px2rem-loader": "^0.1.9",
     "rimraf": "^2.6.0",
     "sass": "^1.35.2",
     "sass-loader": "^7.3.1",

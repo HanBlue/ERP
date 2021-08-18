@@ -40,7 +40,7 @@ zuul:
 
 erp:
   jwt:
-    pubKeyPath: C:\Users\\黄淮\\Desktop\\Leyou\\leyou-auth\\rsa\\rsa.pub # 公钥地址
+    pubKeyPath: /www/wwwroot/rsa.pub # 公钥地址
     cookieName: LY_TOKEN # cookie的名称
   filter:
     allowPaths:

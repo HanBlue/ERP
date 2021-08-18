@@ -10,10 +10,10 @@ import './http';
 import 'vuetify/dist/vuetify.min.css'
 import qs from 'qs'
 import 'element-ui/lib/theme-chalk/index.css';
-import './assets/material.css'
-import Element from 'element-ui'
-
-
+import './assets/material.css';
+import Element from 'element-ui';
+import './components/fonts/font.css';
+import 'lib-flexible'
 Vue.use(Vuetify, { theme: config.theme})
 Vue.use(MyComponent)
 Vue.use(Element)

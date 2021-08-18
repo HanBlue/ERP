@@ -96,7 +96,7 @@
         this.$http.get("/auth/verify/" )
           .catch(() => {
             // 去登录
-            this.$router.push("/login");
+            this.$router.go(0);
           })
           .then(resp => {
             //查询权限
@@ -145,17 +145,19 @@
             //this.oldUser.name = data.item.name;
           })
       },
-      deleteUser: function (t) {
+      deleteUser:function(t) {
         var e = this;
-        this.$message.confirm("此操作将永久删除该用户, 是否继续?").then(function () {
-          e.$http.delete("/user?id=" + t.id).then(function () {
-            e.$message.success("删除成功！")
-          }).then(function () {
+        this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(function(){
+          e.$http.delete("/user?id=" + t.id)
+            .then(function(){
+              e.$message.success("删除成功！")}).then(function (){
             e.getDataFromServer()
           })
-        }).catch(function () {
-          e.$message.info("删除已取消！")
-        })
+        }).catch(function(){e.$message.info("删除已取消！")})
       },
       closeWindow() {
         // 重新加载数据

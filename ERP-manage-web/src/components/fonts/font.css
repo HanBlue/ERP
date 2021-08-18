@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'english';
+  src: url("TimesNewRoman.ttf");
+}
+
+@font-face {
+  font-family: 'english1';
+  src: url("HELN.ttf");
+}
+
+@font-face {
+  font-family: 'english2';
+  src: url("m.ttf");
+}
+
+@font-face {
+  font-family: 'tes2';
+  src: url("小楷字体SJ2.ttf");
+}
+@font-face {
+  font-family: 'tes1';
+  src: url("欧阳询体.ttf");
+}
+#h {
+  font-family: 'tes2';
+}
+#j {
+  font-family: 'english1';
+}
+#k {
+  font-family: 'english';
+}
+#l {
+  font-family: 'english2';
+}

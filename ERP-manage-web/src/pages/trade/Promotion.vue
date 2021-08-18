@@ -103,7 +103,7 @@
         this.$http.get("/auth/verify/" )
           .catch(() => {
             // 去登录
-            this.$router.push("/login");
+            this.$router.go(0);
           })
           .then(resp => {
             //查询权限
@@ -158,12 +158,13 @@
       },
       deletePro:function(t){
         var e=this;
-        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        this.$confirm('此操作将永久删除该活动, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
         }).then(function(){
-          e.$http.delete("/item/promotion?id="+t.id).then(function(){
+          e.$http.delete("/item/promotion?id="+t.id)
+            .then(function(){
             e.$message.success("删除成功！")}).then(function (){
             e.getDataFromServer()
           })

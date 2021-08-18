@@ -57,7 +57,8 @@
     <v-toolbar
       app
       dark
-      :color="dark ? 'deep-purple accent-3' : 'light-blue darken-1'"
+      :color="dark ? '#001C91':'#052AC4'  "
+      dense
     >
       <!-- 收起左侧菜单的按钮-->
       <v-btn icon @click.stop="miniVariant = !miniVariant">
@@ -154,7 +155,7 @@
   }
 </script>
 
-<style scoped >
+<style lang="scss" >
   .box {
     width: 90%;
   }
@@ -166,4 +167,5 @@
     font-size: 20px;
     color: #3a8ee6;
   }
+
 </style>

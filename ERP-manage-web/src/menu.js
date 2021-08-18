@@ -3,7 +3,7 @@ var menus = [
     action: "home",
     title: "首页",
     path:"/home",
-    items: [{ title: "欢迎页", path: "/blog" }]
+    items: [{ title: "功能介绍", path: "/blog" }]
   },
   {
     action: "apps",

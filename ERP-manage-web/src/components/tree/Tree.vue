@@ -52,7 +52,7 @@
         this.$http.get("/auth/verify/" )
           .catch(() => {
             // 去登录
-            this.$router.push("/login");
+            this.$router.go(0);
           })
           .then(resp => {
             //查询权限

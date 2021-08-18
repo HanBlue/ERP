@@ -1,40 +1,80 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-          <v-flex xs12 sm8 md4 >
-            <v-card class="elevation-12" >
-              <v-toolbar dark color="primary">
-                <v-toolbar-title >ERP订单管理系统</v-toolbar-title>
-                <v-spacer></v-spacer>
-              </v-toolbar>
-  <p class="login">
+  <div class="login-container">
+    <tr>
+      <div class="hed">
+        <td><a class="tool" href="https://www.hanblue.top" style="text-decoration-line: none" >Starter</a></td>
+        <td><a class="tool3" href="https://blog.hanblue.top/2021/0715undefined.html" target="_blank" style="text-decoration-line: none" >Learn</a></td>
+        <td><a class="tool3" href="https://blog.hanblue.top/2021/0728undefined.html" target="_blank" style="text-decoration-line: none" >View</a></td>
+        <td><a class="tool3" href="https://blog.hanblue.top/2021/0812undefined.html" target="_blank" style="text-decoration-line: none" >Deploy</a></td>
+        <td><a class="tool2" href="https://blog.hanblue.top/" target="_blank" style="text-decoration-line: none" >HANBlUE</a></td>
+        <td><a class="tool4" href="https://blog.hanblue.top/archives/" target="_blank" style="text-decoration-line: none" >archives</a></td>
+        <td><a class="tool3" href="https://blog.hanblue.top/about/" target="_blank" style="text-decoration-line: none" >about</a></td>
+      </div>
+    </tr>
+
+    <div>
+    <td >
+    <div class="h1" >
+      <v-responsive width="460px">
+       <tr><t class="t2">ERP 企业资源计划</t></tr>
+        <tr><t class="t2">订单管理系统</t></tr>
+        <div class="line-left-right"></div>
+        <div class="h2">
+        <tr><p class="t1"> Due to the need for data processing and data confidentiality of orders,
+          today's e-commerce merchants mostly use their own development or purchase of finished products.</p> </tr>
+        </div>
+        <div class="line-left-right1"></div>
+
+        <v-btn elevation="2"  large  plain  @click="flag=!flag" class="bt" >Login  Now</v-btn>
+
+      </v-responsive>
+    </div>
+    </td>
+
+    <td>
+      <transition name="slide-fade">
+    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="60px" class="login-form" v-show="!flag" label-position="center" >
+      <h2 class="t3" >ERP 订单管理系统</h2>
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="登录" name="first">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-item label="名称" prop="username" ><el-input v-model="ruleForm.username" placeholder="root" ></el-input></el-form-item>
-          <el-form-item label="密码" prop="password"><el-input type="password" v-model="ruleForm.password" auto-complete="off"placeholder="55555"></el-input></el-form-item>
+      <el-tab-pane   label="登录" name="first" >
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="60px" class="demo-ruleForm">
+          <el-form-item label="用户名"  prop="username"><el-input v-model="ruleForm.username" placeholder="root" ></el-input></el-form-item>
+          <el-form-item label="密码" prop="password"><el-input type="password" v-model="ruleForm.password" auto-complete="off" placeholder="55555"></el-input></el-form-item>
 
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
-
+            <el-button type="primary" plain @click="submitForm('ruleForm')" align="center">登录<i class="el-icon-s-promotion el-icon--right"></i></el-button>
             <el-button @click="resetForm('ruleForm')">重置</el-button>
           </el-form-item>
         </el-form>
       </el-tab-pane>
-
       <el-tab-pane label="注册" name="second">
         <register></register>
       </el-tab-pane>
     </el-tabs>
-  </p>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-      </v-content>
-    </v-app>
+    </el-form>
+      </transition>
+    </td>
+  </div>
+    <div>
+      <tr>
+        <p class="boot">1 — 1</p>
+      </tr>
+    </div>
+    <br>
+    <div>
+    <span >
+      <p class= "tb" style="color:lightgray;" align="center" >
+        Copyright © 2021 HAN蓝海
+      </p>
+    </span>
+
+    <span >
+      <p align="center">
+      <a href="http://www.beian.miit.gov.cn/" class="tb" style="color:lightgray ; text-decoration-line: none; " target="_blank" >皖ICP备2021011752号-1</a>
+      </p>
+    </span>
+  </div>
+  </div>
 </template>
 
 <script>
@@ -54,6 +94,8 @@
       };
 
       return {
+        flag: true,
+        isShow: true,
         activeName: 'first',
         ruleForm: {
           username: '',
@@ -111,6 +153,17 @@
 </script>
 
 <style lang="scss">
+  .slide-fade-enter-active {
+    transition: all .8s cubic-bezier(0.5, 1, 0.5, 0.7);
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active 用于 2.1.8 以下版本 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
   .login {
     width: 400px;
     margin: 0 auto;
@@ -121,10 +174,109 @@
     width: 60px;
   }
 
-  .container{
-    background-repeat: repeat-y;
-    background-size: 105%;
-    background-image: url("../assets/0.jpg");
+  .login-container {
+        position: absolute;
+         width: 100%;
+         height: auto;
+        background: url("../assets/0.jpg");
+        background-size: contain;
+    }
+  .login-form {
+    width: 420px;
+    height: 390px;
+    margin: 50px 0px 0px 0px; /* 上下间距160px，左右自动居中*/
+    background-color: rgb(255, 255, 255, 0.7); /* 透明背景色 */
+    padding: 30px;
+    border-radius: 20px; /* 圆角 */
+  }
+  .login-title {
+    text-align: center;
+    color: rgb(0,0,0);
+  }
+ .t1{
+  text-align: left;
+   color: rgb(255,255,255);
+   font-size: 20px;
+   font-family: english1;
+  }
+  .t2{
+    text-align: left;
+    color: rgb(255,255,255);
+    font-size: 45px;
+    font-family: tes2;
+    line-height: 1.5em;
+    white-space: nowrap;
+  }
+  .t3{
+    text-align: center;
+    color: rgb(0,0,0,0.6);
+    font-size: 25px;
+    font-family: tes2;
+    margin: 0px 0px 20px 0px;
+
+  }
+  .line-left-right {
+    padding:  0px 0px;
+    margin: 30px 0px;
+    line-height: 1px;
+    border-left: 80px solid rgb(221, 221, 221);
+    border-right: 0px solid rgb(221, 221, 221);
+    text-align: center;
+    height: 2px;
+  }
+  .line-left-right1 {
+    padding:  0px 0px;
+    margin: 40px 0px;
+    line-height: 1px;
+    border-left: 90px solid rgb(221, 221, 221);
+    border-right: 0px solid rgb(221, 221, 221);
+    text-align: center;
+    height: 0px;
+  }
+.h1{
+  margin: 70px 270px 0px 230px;
+}
+  .bt{
+    margin: 0px 0px;
+  }
+  .h2{
+    line-height: 2.8em;
+  }
+  .hed{
+    margin: 25px 0px;
+  }
+  .tool{
+    margin: 0px 0px 0px 195px;
+    font-size: 20px;
+    color: rgb(255,255,255);
+    font-family: english;
+  }
+  .tool3{
+    margin: 0px 0px 0px 55px;
+    font-size: 20px;
+    color: rgb(255,255,255);
+    font-family: english;
+  }
+  .tool2{
+    margin: 0px 130px 0px 130px;
+    font-size: 35px;
+    color: rgb(255,255,255);
+    font-family: english2;
+  }
+  .tool4{
+    margin: 0px 0px 0px 0px;
+    font-size: 20px;
+    color: rgb(255,255,255);
+    font-family: english;
+  }
+  .boot{
+    margin: 100px 10px 10px 200px;
+    font-size: 14px;
+    color: rgb(255,255,255);
+    font-family: english;
+  }
+  .tb{
+    font-size: 15px;
   }
 
  </style>

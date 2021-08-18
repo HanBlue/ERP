@@ -1,5 +1,7 @@
 <template>
+
   <v-card>
+    <el-row  class="cat">
     <v-card-title>
       <v-btn color="primary" @click="addBrand">新增品牌</v-btn>
       <!--搜索框，与search属性关联-->
@@ -52,7 +54,9 @@
         </v-card-text>
       </v-card>
     </v-dialog>
+    </el-row>
   </v-card>
+
 </template>
 
 <script>
@@ -104,7 +108,7 @@
         this.$http.get("/auth/verify/" )
           .catch(() => {
             // 去登录
-            this.$router.push("/login");
+            this.$router.go(0);
           })
           .then(resp => {
             //查询权限
@@ -183,6 +187,9 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+  .cat{
+    background-image: url("../../assets/66.jpg");
+    background-size: 74%;
+  }
 </style>

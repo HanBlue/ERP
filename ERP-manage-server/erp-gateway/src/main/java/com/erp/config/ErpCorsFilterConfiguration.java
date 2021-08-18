@@ -14,10 +14,10 @@ public class ErpCorsFilterConfiguration {
         //1.添加CORS配置信息
         CorsConfiguration configration = new CorsConfiguration();
         //1) 允许的域,不要写*，否则cookie就无法使用了
-        configration.addAllowedOrigin("http://www.hanblue.top:9002");
-        configration.addAllowedOrigin("http://manage.hanblue.top:9002");
+        configration.addAllowedOrigin("https://www.hanblue.top");
+        configration.addAllowedOrigin("https://www.hanblue.top:80");
         configration.addAllowedOrigin("http://www.hanblue.top");
-        configration.addAllowedOrigin("http://manage.hanblue.top");
+        configration.addAllowedOrigin("http://www.hanblue.top:80");
         //2) 是否发送Cookie信息
         configration.setAllowCredentials(true);
         //3) 允许的请求方式
