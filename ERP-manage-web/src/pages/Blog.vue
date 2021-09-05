@@ -19,14 +19,14 @@
               <div>
             <td width="30px" @click="brand1" >
               <div v-show=!brandseen >
-            <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/TPjiYhc68XKdRVy.png'" ></el-avatar>
+            <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2ot0.png'" ></el-avatar>
               <p class="text" align="center" >品牌管理</p>
               </div>
             </td>
                 <td  v-show = brandseen   >
                   <div  @click="brand2" >
                   <el-card :body-style="{ padding: '0px' }" >
-                    <img src="https://i.loli.net/2021/08/11/Y1bukS4hfCGIUqm.jpg" class="image">
+                    <img src="https://z3.ax1x.com/2021/09/05/hRhIrF.jpg" class="image">
                       <span class="text" >品牌管理中，您可以新增、删除和修改品牌的属性；</span>
                       <div align="center"><el-button type="text" class="button" @click="brand" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                   </el-card>
@@ -36,14 +36,14 @@
                 <td width="50px"></td>
                 <td width="30px" @click="goods1" >
                   <div v-show=!goodsseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/NvZCakj8prYyPWQ.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2ThV.png'" ></el-avatar>
                     <p class="text" align="center" >商品列表</p>
                   </div>
                 </td>
                 <td  v-show = goodsseen   >
                   <div  @click="goods2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/S9rXKjynMDLf81A.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRhob4.jpg" class="image">
                       <span class="text" >商品列表功能中，您可以管理商品的属性，并进行上下架操作；</span>
                       <div align="center"><el-button type="text" class="button" @click="brand" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -53,14 +53,14 @@
                 <td width="50px"></td>
                   <td width="30px" @click="spec1" >
                     <div v-show=!specseen >
-                      <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/HTq9i6xmal1JONv.png'" ></el-avatar>
+                      <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR247n.png'" ></el-avatar>
                       <p class="text" align="center" >规格参数</p>
                     </div>
                   </td>
                   <td  v-show=specseen  >
                     <div  @click="spec2" >
                       <el-card :body-style="{ padding: '0px' }" >
-                        <img src="https://i.loli.net/2021/08/11/eCbkrwTYMVaBHnu.jpg" class="image">
+                        <img src="https://z3.ax1x.com/2021/09/05/hRh6Ej.jpg" class="image">
                         <span class="text" >规格参数功能中，您可以对特定商品分类的规格进行修改；</span>
                         <div align="center"><el-button type="text" class="button" @click="spec" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                       </el-card>
@@ -70,14 +70,14 @@
                 <td width="50px"></td>
                 <td width="30px" @click="cate1" >
                   <div v-show=!cateseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/dQMR4YiUzp6qK8u.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2Ikq.png'" ></el-avatar>
                     <p class="text" align="center" >分类管理</p>
                   </div>
                 </td>
                 <td  v-show=cateseen   >
                   <div  @click="cate2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/2j6iTsPuqwdIXtH.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRh6Ej.jpg" class="image">
                       <span class="text" >分类管理功能中，您可以对商品的分类进行新增、修改和删除；</span>
                       <div align="center"><el-button type="text" class="button" @click="cate" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -93,14 +93,14 @@
               <div>
                 <td width="30px" @click="dash1" >
                   <div v-show=!dashseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/vjd7Tbq5UL2z6Se.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2fmj.png'" ></el-avatar>
                     <p class="text" align="center" >交易统计</p>
                   </div>
                 </td>
-                <td  v-show = dashseen  width=500px >
+                <td  v-show = dashseen   >
                   <div  @click="dash2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/XoxkPrWqhCfbcVv.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRhf2V.jpg" class="image">
                       <span class="text" >交易统计功能中，您可以查看近期的交易数据和图表；</span>
                       <div align="center"><el-button type="text" class="button" @click="dash" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -110,14 +110,14 @@
                 <td width="50px"></td>
                 <td width="30px" @click="order1" >
                   <div v-show=!orderseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/t1qXI5VYbZLQygx.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2RXQ.png'" ></el-avatar>
                     <p class="text" align="center" >订单管理</p>
                   </div>
                 </td>
-                <td  v-show = orderseen  width=500px >
+                <td  v-show = orderseen   >
                   <div  @click="order2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/PH1MgmRn6yFTo4C.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRhRCq.jpg" class="image">
                       <span class="text" >订单管理功能中，您可以查看订单的购买数据和物流信息；</span>
                       <div align="center"><el-button type="text" class="button" @click="order">现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -127,14 +127,14 @@
                 <td width="50px"></td>
                 <td width="30px" @click="pro1" >
                   <div v-show=!proseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/u5z2hKWyDJ4VeCt.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2qcF.png'" ></el-avatar>
                     <p class="text" align="center" >促销管理</p>
                   </div>
                 </td>
-                <td  v-show=proseen  width=500px >
+                <td  v-show=proseen   >
                   <div  @click="pro2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/aYHLsNwCVgbujtc.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRhg5n.jpg" class="image">
                       <span class="text" >促销管理功能中，您可以上传，修改或删除促销活动；</span>
                       <div align="center"><el-button type="text" class="button" @click="pro" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -150,15 +150,15 @@
               <div>
                 <td width="30px" @click="role1" >
                   <div v-show=!roleseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/QT2hRLuYnls9BEq.png'" ></el-avatar>
-                    <p class="text" align="center" >权限管理</p>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2HpT.png'" ></el-avatar>
+                    <p class="text" align="center" >角色管理</p>
                   </div>
                 </td>
-                <td  v-show = roleseen  width=500px >
+                <td  v-show = roleseen   >
                   <div  @click="role2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/sfpDJgNzhI9uYG1.jpg" class="image">
-                      <span class="text" >权限管理功能中，您可以对全局的权限信息进行修改；</span>
+                      <img src="https://z3.ax1x.com/2021/09/05/hRh5KU.jpg" class="image">
+                      <span class="text" >角色管理功能中，您可以对全局的权限角色信息进行修改；</span>
                       <div align="center"><el-button type="text" class="button" @click="role" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
                   </div>
@@ -167,14 +167,14 @@
                 <td width="50px"></td>
                 <td width="30px" @click="user1" >
                   <div v-show=!userseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/WZaeSsfNHMuE3dG.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2h0s.png'" ></el-avatar>
                     <p class="text" align="center" >用户管理</p>
                   </div>
                 </td>
-                <td  v-show = userseen  width=500px >
+                <td  v-show = userseen   >
                   <div  @click="user2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/nC9EIOMs5WAQbgi.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRhHa9.jpg" class="image">
                       <span class="text" >用户管理功能中，您可以对所有账户的信息进行修改；</span>
                       <div align="center"><el-button type="text" class="button" @click="user">现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -191,14 +191,14 @@
               <div>
                 <td width="30px" @click="swagger1" >
                   <div v-show=!swaggerseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/xUwjQ1kNH6mMJCy.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2LX4.png'" ></el-avatar>
                     <p class="text" align="center" >系统接口</p>
                   </div>
                 </td>
-                <td  v-show =swaggerseen  width=500px >
+                <td  v-show =swaggerseen   >
                   <div  @click="swagger2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/WGtzO2k6Q9qyeV8.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRhb5R.jpg" class="image">
                       <span class="text" >系统接口功能中，您可以查看利用Swagger注解展示的所有后台接口信息，方便开发人员进行工作;</span>
                       <div align="center"><el-button type="text" class="button" @click="swagger" >现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -208,14 +208,14 @@
                 <td width="50px"></td>
                 <td width="30px" @click="eureka1" >
                   <div v-show=!eurekaseen >
-                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://i.loli.net/2021/08/15/OpjKPzFVHABnlh2.png'" ></el-avatar>
+                    <el-avatar  shape="square" :size="80" :fit="fit" :src="'https://z3.ax1x.com/2021/09/05/hR2b1U.png'" ></el-avatar>
                     <p class="text" align="center" >微服务管理</p>
                   </div>
                 </td>
-                <td  v-show = eurekaseen  width=500px >
+                <td  v-show = eurekaseen   >
                   <div  @click="eureka2" >
                     <el-card :body-style="{ padding: '0px' }" >
-                      <img src="https://i.loli.net/2021/08/11/d98bBkPS4uKQsqR.jpg" class="image">
+                      <img src="https://z3.ax1x.com/2021/09/05/hRh7VJ.jpg" class="image">
                       <span class="text" >微服务管理功能中，您可以查看所有正常运作的微服务，这是 Spring Cloud 的特点；</span>
                       <div align="center"><el-button type="text" class="button" @click="eureka">现在访问<i class="el-icon-s-promotion el-icon--right"></i></el-button></div>
                     </el-card>
@@ -225,7 +225,7 @@
             </tr>
 
             <br>
-            <tr><span class="header">{{ text16 }}<a :href="'http://Hanblue.github.io'">http://Hanblue.github.io</a></span></tr>
+            <tr><span class="header">{{ text16 }}<a :href="'https://blog.hanblue.top/'">https://blog.hanblue.top/</a></span></tr>
           </div>
 
         </div>
@@ -252,7 +252,7 @@
         swaggerseen:false,
         eurekaseen:false,
         text0:"您可以点击图标查看功能预览",
-        text1:"‘root’账户拥有超级管理员权限，‘han1’和‘HAN’拥有运维和游客权限。注册后默认只有游客权限，如需要请联系超级管理员赋权。",
+        text1:"root账户拥有超级管理员权限，han1和HAN拥有运维和游客权限。注册后默认只有游客权限，如需要请联系超级管理员赋权。",
         text2:" ",
         text3:"商品管理功能需要超级管理员或者运维权限",
 

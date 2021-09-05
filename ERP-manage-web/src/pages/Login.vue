@@ -15,7 +15,7 @@
     <div>
     <td >
     <div class="h1" >
-      <v-responsive width="460px">
+      <v-responsive >
        <tr><t class="t2">ERP 企业资源计划</t></tr>
         <tr><t class="t2">订单管理系统</t></tr>
         <div class="line-left-right"></div>
@@ -38,7 +38,7 @@
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane   label="登录" name="first" >
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="60px" class="demo-ruleForm">
-          <el-form-item label="用户名"  prop="username"><el-input v-model="ruleForm.username" placeholder="root" ></el-input></el-form-item>
+          <el-form-item label="账号"  prop="username"><el-input v-model="ruleForm.username" placeholder="root" ></el-input></el-form-item>
           <el-form-item label="密码" prop="password"><el-input type="password" v-model="ruleForm.password" auto-complete="off" placeholder="55555"></el-input></el-form-item>
 
           <el-form-item>
@@ -54,14 +54,16 @@
     </el-form>
       </transition>
     </td>
-  </div>
-    <div>
+
+
+    <span>
       <tr>
         <p class="boot">1 — 1</p>
       </tr>
-    </div>
+      </span>
     <br>
     <div>
+
     <span >
       <p class= "tb" style="color:lightgray;" align="center" >
         Copyright © 2021 HAN蓝海
@@ -73,6 +75,7 @@
       <a href="http://www.beian.miit.gov.cn/" class="tb" style="color:lightgray ; text-decoration-line: none; " target="_blank" >皖ICP备2021011752号-1</a>
       </p>
     </span>
+  </div>
   </div>
   </div>
 </template>
@@ -182,11 +185,11 @@
         background-size: contain;
     }
   .login-form {
-    width: 420px;
+    width: 400px;
     height: 390px;
-    margin: 50px 0px 0px 0px; /* 上下间距160px，左右自动居中*/
+    margin: 0px 0px 0px 0px; /* 上下间距160px，左右自动居中*/
     background-color: rgb(255, 255, 255, 0.7); /* 透明背景色 */
-    padding: 30px;
+    padding: 40px;
     border-radius: 20px; /* 圆角 */
   }
   .login-title {
@@ -196,7 +199,7 @@
  .t1{
   text-align: left;
    color: rgb(255,255,255);
-   font-size: 20px;
+   font-size: 18px;
    font-family: english1;
   }
   .t2{
@@ -226,7 +229,7 @@
   }
   .line-left-right1 {
     padding:  0px 0px;
-    margin: 40px 0px;
+    margin: 30px 0px;
     line-height: 1px;
     border-left: 90px solid rgb(221, 221, 221);
     border-right: 0px solid rgb(221, 221, 221);
@@ -234,10 +237,12 @@
     height: 0px;
   }
 .h1{
-  margin: 70px 270px 0px 230px;
+  margin: 90px 280px 0px 220px;
+  width: 500px;
+  height: 430px;
 }
   .bt{
-    margin: 0px 0px;
+    margin: 0px 0px 0px 0px;
   }
   .h2{
     line-height: 2.8em;
@@ -258,7 +263,7 @@
     font-family: english;
   }
   .tool2{
-    margin: 0px 130px 0px 130px;
+    margin: 0px 300px 0px 110px;
     font-size: 35px;
     color: rgb(255,255,255);
     font-family: english2;
